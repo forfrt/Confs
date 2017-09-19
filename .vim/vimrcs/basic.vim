@@ -1,10 +1,10 @@
-
 "关闭兼容模式
 set nocompatible
 
 set nu!
 set list
 set listchars=eol:\ 
+set noundofile
 
 "界面设置
 set mouse=
@@ -18,10 +18,8 @@ syntax on
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
-
 "关闭上侧工具栏
 set guioptions-=T
-
 "关闭右侧滚动条
 set guioptions-=r
 
