@@ -23,6 +23,10 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'powerline/powerline'
+" Need to use font like 'Dejavu Sans Mono for powerline' to work
+Plugin 'mzlogin/vim-markdown-toc'
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
 Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -52,9 +56,39 @@ map <S-F4> <Plug>VimwikiAll2HTML
 """"""""""""""""""""""""""""""
 noremap <F2> :Autoformat<CR>
 au BufWrite *.c :Autoformat
-let g:formatdef_frt_custom_c = "astyle --style=allman -xc -xk -xV -CKfp* -xt"
+let g:formatdef_frt_custom_c = '"astyle --style=java -CKfxt"'
 let g:formatters_c = ['frt_custom_c']
 let g:formatters_yapf_style = 'pep8'
-let g:autoformat_verbosemode=1
+
+""""""""""""""""""""""""""""""
+" => Tagbar
+""""""""""""""""""""""""""""""
+nmap <F9> :TagbarToggle<CR>
+" 启动时自动focus
+let g:tagbar_autofocus = 1
+
+" for ruby, delete if you do not need
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+    \ }
+
+
+""""""""""""""""""""""""""""""
+" => NERDTree
+""""""""""""""""""""""""""""""
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=35
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr></cr></leader></Space></leader></cr></leader>
 
 

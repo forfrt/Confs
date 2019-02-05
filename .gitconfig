@@ -28,4 +28,4 @@
 [color "branch"]
 	upstream = magenta
 [core]
-	editor = vim
+    editor = vim

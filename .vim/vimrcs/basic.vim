@@ -14,10 +14,6 @@ set guifont=Courier\ New:h10
 syntax enable
 syntax on
 
-"模仿windows快捷键
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
 "关闭上侧工具栏
 set guioptions-=T
 "关闭右侧滚动条
