@@ -17,7 +17,9 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 "
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'lervag/vimtex'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vimwiki/vimwiki'
 Plugin 'Raimondi/delimitMate'
@@ -30,9 +32,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'L9'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 
 """"""""""""""""""""""""""""""
 " => Vimwiki Plugin
@@ -50,6 +54,7 @@ let g:vimwiki_ext2syntax = {'.md':'markdown','.markdown':'markdown','.mdown':'ma
 
 map <F4> <Plug>Vimwiki2HTML
 map <S-F4> <Plug>VimwikiAll2HTML
+
 
 """"""""""""""""""""""""""""""
 " => autoformatter Plugin
@@ -79,7 +84,6 @@ let g:tagbar_type_ruby = {
     \ ]
     \ }
 
-
 """"""""""""""""""""""""""""""
 " => NERDTree
 """"""""""""""""""""""""""""""
@@ -90,5 +94,30 @@ let g:NERDTreeWinSize=35
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr></cr></leader></Space></leader></cr></leader>
+
+
+""""""""""""""""""""""""""""""
+" => vimtex
+""""""""""""""""""""""""""""""
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura' " open x window channel otherwise vim will break before start up
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+
+""""""""""""""""""""""""""""""
+" => ultisnips
+""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>''</tab></tab>'
+
+
+""""""""""""""""""""""""""""""
+" => Gutentags
+""""""""""""""""""""""""""""""
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_project_root = ['Makefile']
 
 

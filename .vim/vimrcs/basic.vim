@@ -28,7 +28,6 @@ if has("win32")
 else
  set fileencoding=utf-8
 endif
-language messages zh_CN.utf-8
 
 "ÖÇÄÜËõ½ø
 set expandtab
